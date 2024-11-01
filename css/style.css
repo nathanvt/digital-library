@@ -1,0 +1,234 @@
+:root {
+    --font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --body: 1rem;
+    --sm-body:0.875rem;
+    --xs-body:0.75rem;
+}
+
+body, html {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px !important;
+    font-family: var(--font);
+}
+
+p, li, label {
+    font-family: var(--font);
+    font-size: var(--xs-body);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.book-card {
+    position: relative;
+    /* grid-column: 1fn; */
+    /* padding: 24px 36px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #FFF;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 36px;
+
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px;
+    height: 44px;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.card-bottom > div {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-card img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.status {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 76%;
+    cursor: pointer;
+    text-align: center;
+    align-self: center;
+    border-bottom-left-radius: inherit;
+    border: none;
+}
+
+.status h4 {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.status[data-read="unread"] {
+    background-color: rgb(254, 195, 84);
+    /* border: solid 1px orange; */
+    color: rgb(141, 63, 0);
+}
+
+.status[data-read="read"] {
+    background-color: rgb(171, 248, 103);
+    /* border: solid 1px rgb(124, 214, 13); */
+    color: rgb(87, 148, 12);
+}
+
+.status[data-read="unread"]:hover {
+    background-color: rgb(254, 216, 144);
+    /* border: solid 1px orange; */
+    color: rgb(141, 63, 0);
+}
+
+.status[data-read="read"]:hover {
+    background-color: rgb(212, 255, 175);
+    /* border: solid 1px rgb(124, 214, 13); */
+    color: rgb(87, 148, 12);
+}
+
+.icon {
+    width: 24%;
+    text-align: center;
+    border-bottom-right-radius: inherit;
+    background-color: #EEE;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background-color: rgb(246, 70, 70);
+}
+
+.icon svg {
+    height: 20px;
+    width: fit-content;
+    fill: #444;
+}
+
+.icon:hover svg {
+    fill: #FFF;
+}
+
+.library {
+    display: flex;
+    flex-direction: row;
+    background-color: #CCC;
+}
+
+.book-input {
+    padding: 2rem;
+    background-color: #EEE;
+    height: 100vh;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.book-input form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.book-input div.input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+div.check {
+    flex-direction: row !important;
+    align-items: center;
+}
+
+input {
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding: 0px 16px;
+}
+
+/* input:focus{
+    box-shadow: 0px 4px 12px rgba(0,0,0,.2);
+} */
+
+.library-wrapper {
+    padding: 3rem 2rem;
+    width: 75%;
+}
+
+button {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 50px;
+    background-color: orangered;
+    font-family: var(--font);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(215, 57, 0);
+}
+
+@media only screen and (min-width:1800px) {
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+    }
+
+}
+
+@media only screen and (max-width:1240px) {
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+}
+
+@media only screen and (max-width:900px) {
+
+    .book-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+}
